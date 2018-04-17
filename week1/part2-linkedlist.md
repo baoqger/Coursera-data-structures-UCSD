@@ -1,5 +1,6 @@
 ### Single Linked List: 
 * 由key和next pointer构成。<br>
+
 ![single-list](https://github.com/baoqger/Coursera-data-structures-UCSD/blob/master/week1/img/single-linked-list.png)<br>
 一些常用的API如下：<br>
 
