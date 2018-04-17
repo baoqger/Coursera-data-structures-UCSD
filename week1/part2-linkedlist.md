@@ -4,6 +4,7 @@
 一些常用的API如下：<br>
 
 ![list-api](https://github.com/baoqger/Coursera-data-structures-UCSD/blob/master/week1/img/list-API.png)<br>
+
 Linked-list的实现，有些只有header，有些还有tail<br>
 
 ![list-api-runtime](https://github.com/baoqger/Coursera-data-structures-UCSD/blob/master/week1/img/list-runtime.png)<br>
