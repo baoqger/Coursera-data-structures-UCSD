@@ -19,21 +19,25 @@ class Stack {
 
 function isBalanced(str) {
   let stack = new Stack();
-  str.split('').forEach((char) => {
+  var index = 0;
+  for (let i = 0; i < str.split('').length; i++) {
+    let char = str.charAt(i);
+    index += 1;
     if (['(', '{', '['].indexOf(char) >= 0) {
-      stack.Push(char);
-    } else {
+      stack.Push({key: char, index: index});
+    } else if ([')', '}', ']'].indexOf(char) >= 0) {
       if (stack.Empty()) {
-        return false;
+        return index;
       }
       let top = stack.Pop();
-      if ((top === '(' && char !== ')') ||  (top === '[' && char !== ']') || (top === '{' && char !== ')')) {
-        return false;
+      if ((top.key === '(' && char !== ')') ||  (top.key === '[' && char !== ']') || (top.key === '{' && char !== '}')) {
+        return index;
       }
     }
-  });
-  return stack.Empty();
+  }
+  if (stack.Empty()) {
+    return 'Success';
+  } else {
+    return stack.Pop().index;
+  }
 }
-
-// test case1
-isBalanced('asdfasdfsdfasf([)')
