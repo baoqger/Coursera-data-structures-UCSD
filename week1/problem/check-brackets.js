@@ -19,19 +19,17 @@ class Stack {
 
 function isBalanced(str) {
   let stack = new Stack();
-  var index = 0;
   for (let i = 0; i < str.split('').length; i++) {
     let char = str.charAt(i);
-    index += 1;
     if (['(', '{', '['].indexOf(char) >= 0) {
-      stack.Push({key: char, index: index});
+      stack.Push({key: char, index: i+1});
     } else if ([')', '}', ']'].indexOf(char) >= 0) {
       if (stack.Empty()) {
-        return index;
+        return i+1;
       }
       let top = stack.Pop();
       if ((top.key === '(' && char !== ')') ||  (top.key === '[' && char !== ']') || (top.key === '{' && char !== '}')) {
-        return index;
+        return i+1;
       }
     }
   }
@@ -41,3 +39,6 @@ function isBalanced(str) {
     return stack.Pop().index;
   }
 }
+
+//test case1
+isBalanced('{[}')
