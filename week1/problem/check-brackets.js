@@ -6,7 +6,7 @@ class Stack {
     this.arr.push(ele);
   }
   Pop() {
-    return this.arr.pop();
+    return this.arr.shift();
   }
   Empty() {
     return this.arr.length === 0;
@@ -18,6 +18,7 @@ class Stack {
 
 
 function isBalanced(str) {
+  console.log('debug...', str);
   let stack = new Stack();
   for (let i = 0; i < str.split('').length; i++) {
     let char = str.charAt(i);
@@ -41,4 +42,4 @@ function isBalanced(str) {
 }
 
 //test case1
-isBalanced('{[}')
+isBalanced('{[}');
